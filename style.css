@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --primary-200: #e7f6ff;
+  --primary-500: #008bc8;
+  --primary-800: #016798;
+  --text-primary-800: #015182;
+  --text-grey-500: #666666;
+  --text-grey-600: #888888;
+  --text-black-500: #000000;
+  --text-black-600: #333333;
+  --white: #ffffff;
+  --bg-pink: #ee4691;
+  --default-border: 1px solid red;
+  --radius-lg: 8px;
+  --btn-shadow: rgba(0, 0, 0, 0.15) 0px 0.706592px 0.706592px -0.625px,
+    rgba(0, 0, 0, 0.145) 0px 1.80656px 1.80656px -1.25px,
+    rgba(0, 0, 0, 0.137) 0px 3.62176px 3.62176px -1.875px,
+    rgba(0, 0, 0, 0.125) 0px 6.8656px 6.8656px -2.5px,
+    rgba(0, 0, 0, 0.106) 0px 13.6468px 13.6468px -3.125px,
+    rgba(0, 0, 0, 0.05) 0px 30px 30px -3.75px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Inter", sans-serif;
+  /* background-image: url('./images/img1.jpg'); */
+  /* background-size: cover; */
+  /* background-color: #000000; */
+  /* background-repeat: no-repeat; */
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.navbar {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--text-grey-600);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+.navbar .logo {
+  height: 90px;
+  width: 90px;
+  overflow: hidden;
+}
+.navbar .logo img {
+  width: 100%;
+  height: 100%;
+}
+.navbar ul li {
+  list-style: none;
+}
+.navbar ul li a {
+  color: var(--text-grey-500);
+  font-size: 18px;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+.navbar ul li a:hover {
+  color: var(--primary-800);
+}
+.navbar .nav-btn {
+  padding: 16px 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  background: var(--primary-500);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--btn-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar .nav-btn:hover {
+  background: var(--bg-pink);
+}
+
+/* CSS for hero section */
+
+section.hero-sec {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 50%;
+}
+.hero-img {
+  height: 500px;
+}
+.hero-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text {
+  padding: 0 100px;
+}
+.hero-text .pre-text {
+  padding: 2px 16px;
+  column-gap: 20px;
+  background-color: var(--primary-200);
+  border-radius: var(--radius-lg);
+}
+.hero-text .pre-text strong {
+  color: var(--primary-800);
+}
+.hero-text .pre-text span {
+  font-size: 14px;
+  color: var(--text-black-500);
+}
+.hero-text h1 {
+  font-size: 40px;
+  color: var(--primary-800);
+}
+.hero-text p {
+  font-size: 24px;
+  color: var(--text-grey-600);
+}
+.hero-btns {
+  column-gap: 20px;
+}
+
+.hero-btns button {
+  padding: 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.hero-btns button:first-child {
+  color: var(--white);
+  background-color: var(--primary-800);
+}
+.hero-btns button:last-child {
+  color: var(--text-black-600);
+  background: var(--primary-200);
+}
+.hero-btns button:last-child:hover {
+  background-color: var(--primary-800);
+  color: var(--white);
+}
+.hero-btns button:first-child:hover {
+  background-color: var(--bg-pink);
+}
