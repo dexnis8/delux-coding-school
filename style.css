@@ -4,9 +4,12 @@
   --primary-200: #e7f6ff;
   --primary-500: #008bc8;
   --primary-800: #016798;
+  --courses-100: #bbddff;
+  --courses-200: #cceeff;
   --text-primary-800: #015182;
   --text-grey-500: #666666;
   --text-grey-600: #888888;
+  --text-black-400: #001122;
   --text-black-500: #000000;
   --text-black-600: #333333;
   --white: #ffffff;
@@ -78,6 +81,8 @@ body {
   box-shadow: var(--btn-shadow);
   transition: all 0.3s ease;
   cursor: pointer;
+  /* display: none; */
+  /* visibility: hidden; */
 }
 
 .navbar .nav-btn:hover {
@@ -128,7 +133,9 @@ body {
 }
 
 .hero-btns button,
-.reasons-grid button {
+.reasons-grid button,
+.explore-card-text button,
+.courses-card button {
   padding: 15px;
   font-size: 14px;
   border: none;
@@ -136,6 +143,7 @@ body {
   font-weight: 600;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  box-shadow: var(--btn-shadow);
 }
 .hero-btns button:first-child {
   color: var(--white);
@@ -175,17 +183,22 @@ body {
 
 section h1.header,
 .reasons-grid h1 {
-  font-size: 40px;
+  font-size: 50px;
   color: var(--primary-800);
+}
+section h1.header {
+  line-height: 24px;
 }
 section p.header-text {
   font-size: 24px;
   color: var(--text-grey-600);
-  width: 73%;
+  width: 60%;
   margin: 0 auto;
   margin-bottom: 80px;
+  text-align: center;
 }
-section.why-choose-us {
+section.why-choose-us,
+section.available-courses {
   background-color: var(--primary-200);
   padding: 30px 100px;
   text-align: center;
@@ -203,23 +216,129 @@ section.why-choose-us .reasons-grid .img {
   height: 324px;
   border-radius: var(--radius-lg);
 }
-section.why-choose-us .reasons-grid .img img {
+section.why-choose-us .reasons-grid .img img,
+section.explore .explore-card .explore-card-img img {
   width: 100%;
   height: 100%;
 }
+section.why-choose-us .reasons-grid h1 {
+  font-size: 50px;
+}
 section.why-choose-us .reasons-grid p {
-  font-size: 20px;
+  font-size: 24px;
   color: var(--text-grey-600);
 }
-section.why-choose-us .reasons-grid button {
+section.why-choose-us .reasons-grid button,
+.explore-card-text button,
+.courses-card button {
   background-color: var(--bg-pink);
   color: var(--white);
 }
-section.why-choose-us .reasons-grid button:hover {
+section.why-choose-us .reasons-grid button:hover,
+.explore-card-text button:hover,
+.courses-card button:hover {
   opacity: 0.75;
 }
 .grid-cards {
   display: flex;
   flex-direction: column;
   row-gap: 80px;
+}
+
+/* Explore our programs css */
+section.explore h1 {
+  text-align: center;
+}
+.explore-cards {
+  display: flex;
+  flex-direction: column;
+  row-gap: 70px;
+}
+.explore-card {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 950px;
+  margin: 0 auto;
+  column-gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.explore-card-img {
+  height: 240px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.explore-card-text h1 {
+  color: var(--primary-800);
+  font-size: 50px;
+  text-align: left !important;
+}
+.explore-card-text p {
+  color: var(--text-grey-600);
+  font-size: 24px;
+}
+
+/* Available courses css */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  gap: 30px 16px;
+}
+.courses-grid .courses-card {
+  /* border: 2px solid red; */
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 15px; */
+  text-align: left;
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 20px 30px;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.3s;
+}
+.courses-card h3 {
+  font-size: 22px;
+  color: var(--text-black-400);
+  line-height: 24px;
+}
+.courses-card .location,
+.courses-card .duration {
+  display: flex;
+  align-items: center;
+}
+.courses-card .location {
+  column-gap: 12px;
+}
+.courses-card .duration {
+  column-gap: 16px;
+}
+.courses-card .location-icon {
+  /* border: 1px solid red; */
+  width: 30px;
+  /* height: 30px; */
+  overflow: hidden;
+}
+.courses-card .duration {
+  margin-bottom: 15px;
+}
+.courses-card span {
+  padding: 8px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text-black-500);
+}
+
+.courses-card .duration span:first-child,
+.courses-card .location .on-site {
+  background-color: var(--courses-100);
+}
+
+.courses-card .duration span:nth-child(2),
+.courses-card .location .online {
+  background-color: var(--courses-200);
+}
+
+.courses-card:hover {
+  transform: scale(1.02);
 }
